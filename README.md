@@ -2,6 +2,7 @@
 This is the portfolio of python code that I learned during BISC450C. 
 
 
+## First Jupter Notebook 
 
 ```python
 %matplotlib inline
@@ -21,23 +22,6 @@ df = pd.read_csv('/home/student/Desktop/classroom/myfiles/notebooks/fortune500.c
 df.head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -101,23 +85,6 @@ df.head()
 df.tail()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -186,19 +153,12 @@ df.columns = ['year', 'rank', 'company', 'revenue', 'profit']
 len(df)
 ```
 
-
-
-
     25500
-
-
 
 
 ```python
 df.dtypes
 ```
-
-
 
 
     year         int64
@@ -216,23 +176,6 @@ non_numberic_profits = df.profit.str.contains('[^0-9.-]')
 df.loc[non_numberic_profits].head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -297,18 +240,13 @@ set(df.profit[non_numberic_profits])
 ```
 
 
-
-
     {'N.A.'}
-
 
 
 
 ```python
 len(df.profit[non_numberic_profits])
 ```
-
-
 
 
     369
@@ -321,8 +259,7 @@ bin_sizes, _, _ = plt.hist(df.year[non_numberic_profits], bins=range(1955, 2006)
 ```
 
 
-![png](output_10_0.png)
-
+![png]![Uploading output_10_0.png…]()
 
 
 ```python
@@ -334,7 +271,6 @@ df.profit = df.profit.apply(pd.to_numeric)
 ```python
 len(df)
 ```
-
 
 
 
@@ -412,12 +348,149 @@ fig.tight_layout()
 ![png](output_17_0.png)
 
 
+## Python Fundamental
+```python
+3 + 5 * 4
+```
+
+
+
+
+    23
+
+
+
 
 ```python
-
+weight_kg = 60
 ```
 
 
 ```python
-
+weight_kg = 60.3
 ```
+
+
+```python
+patient_id = '001'
+```
+
+
+```python
+weight_lb = 2.2 * weight_kg
+```
+
+
+```python
+patient_id = 'inflam_' + patient_id
+```
+
+
+```python
+print(weight_lb)
+print(patient_id)
+```
+
+    132.66
+    inflam_001
+
+
+
+```python
+print(patient_id, 'weight in kilograms:', weight_kg)
+```
+
+    inflam_001 weight in kilograms: 60.3
+
+
+
+```python
+print(type(60.3))
+print(type(patient_id))
+```
+
+    <class 'float'>
+    <class 'str'>
+
+
+
+```python
+print('weight in pounds:', 2.2 * weight_kg)
+```
+
+    weight in pounds: 132.66
+
+
+
+```python
+print(weight_kg)
+```
+
+    60.3
+
+
+
+```python
+weight_kg = 65.0
+print('weight in kilograms is now:', weight_kg)
+```
+
+    weight in kilograms is now: 65.0
+
+
+
+```python
+# There are 2.2 pounds per kilogram
+weight_lb = 2.2 * weight_kg
+print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
+```
+
+    weight in kilograms: 65.0 and in pounds: 143.0
+
+
+
+```python
+weight_kg = 100.0
+print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
+```
+
+    weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
+
+
+
+```python
+mass = 47.5
+age = 122
+mass = mass * 2.0
+age = age - 20
+```
+
+
+```python
+first, second = 'Grace', 'Hopper'
+third, fourth = second, first
+print(third, fourth)
+```
+
+    Hopper Grace
+
+
+
+```python
+planet = 'Earth'
+apples = 5
+distance = 10.5
+```
+
+
+```python
+print(type(planet))
+print(type(apples))
+print(type(distance))
+```
+
+    <class 'str'>
+    <class 'int'>
+    <class 'float'>
+
+
