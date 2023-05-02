@@ -259,7 +259,7 @@ bin_sizes, _, _ = plt.hist(df.year[non_numberic_profits], bins=range(1955, 2006)
 ```
 
 
-![png]![Uploading output_10_0.png…]()
+![png]!(output_10_0.png)
 
 
 ```python
@@ -272,19 +272,11 @@ df.profit = df.profit.apply(pd.to_numeric)
 len(df)
 ```
 
-
-
     25131
-
-
-
 
 ```python
 df.dtypes
 ```
-
-
-
 
     year         int64
     rank         int64
@@ -292,9 +284,6 @@ df.dtypes
     revenue    float64
     profit     float64
     dtype: object
-
-
-
 
 ```python
 group_by_year = df.loc[:, ['year', 'revenue', 'profit']].groupby('year')
