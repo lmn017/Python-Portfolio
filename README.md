@@ -344,11 +344,7 @@ fig.tight_layout()
 ```
 
 
-
-
     23
-
-
 
 
 ```python
@@ -484,6 +480,8 @@ print(type(distance))
     <class 'float'>
 
 ## Analyzing Data
+
+In this analysis, we looked at inflammation data for multiple patients.
 ```python
 import numpy
 ```
