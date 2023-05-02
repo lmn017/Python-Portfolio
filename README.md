@@ -3,6 +3,7 @@ This is the portfolio of python code that I learned during BISC450C.
 
 # Welcome to Computational Biolgoy of Python. 
 ## First Jupter Notebook 
+This is the first notebook we made.
 
 ```python
 %matplotlib inline
