@@ -2631,8 +2631,4 @@ if __name__ == '__main__':
     AssertionError: Action is not one of --min, --mean, or --max: -f
 
 
-
-```python
-
-```
 ## Transcribe DNA to RNA
