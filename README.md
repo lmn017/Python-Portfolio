@@ -338,7 +338,7 @@ fig.tight_layout()
 ![png](output_17_0.png)
 
 
-## Python Fundamental {.tabset}
+## Python Fundamental 
 ```python
 3 + 5 * 4
 ```
