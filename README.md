@@ -2,7 +2,7 @@
 This is the portfolio of python code that I learned during BISC450C. 
 
 # Welcome to Computational Biolgoy of Python. 
-## First Jupter Notebook 
+## First Jupter Notebook (1&2)
 This is the first notebook we made.
 
 ```python
@@ -338,7 +338,7 @@ fig.tight_layout()
 ![png](output_17_0.png)
 
 
-## Python Fundamental 
+## Python Fundamentals 
 ```python
 3 + 5 * 4
 ```
@@ -479,7 +479,7 @@ print(type(distance))
     <class 'int'>
     <class 'float'>
 
-## Analyzing Data
+## Analyzing Data (1, 2, & 3)
 
 In this analysis, we looked at inflammation data for multiple patients.
 ```python
@@ -1561,7 +1561,7 @@ print('The number of vowels in this string is ' + str(count))
 
     The number of vowels in this string is 6
 
-## Functions
+## Functions (1, 2, 3, & 4)
 ```python
 fahrenheit_val = 99
 celsius_val = ((fahrenheit_val - 32) * (5/9))
