@@ -1118,21 +1118,6 @@ print(odds[3])
     5
 
 
-
-    ---------------------------------------------------------------------------
-
-    IndexError                                Traceback (most recent call last)
-
-    <ipython-input-3-b48c9fadc7bf> in <module>
-          3 print(odds[1])
-          4 print(odds[2])
-    ----> 5 print(odds[3])
-    
-
-    IndexError: list index out of range
-
-
-
 ```python
 odds = [1, 3, 5, 7]
 for num in odds:
