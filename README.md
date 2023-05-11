@@ -362,5 +362,629 @@ fig.tight_layout()
 
 ```
 
+## Python Fundamentals
+```python
+3 + 5 * 4
+```
 
+
+
+
+    23
+
+
+
+
+```python
+weight_kg = 60
+```
+
+
+```python
+weight_kg = 60.3
+```
+
+
+```python
+patient_id = '001'
+```
+
+
+```python
+weight_lb = 2.2 * weight_kg
+```
+
+
+```python
+patient_id = 'inflam_' + patient_id
+```
+
+
+```python
+print(weight_lb)
+print(patient_id)
+```
+
+    132.66
+    inflam_001
+
+
+
+```python
+print(patient_id, 'weight in kilograms:', weight_kg)
+```
+
+    inflam_001 weight in kilograms: 60.3
+
+
+
+```python
+print(type(60.3))
+print(type(patient_id))
+```
+
+    <class 'float'>
+    <class 'str'>
+
+
+
+```python
+print('weight in pounds:', 2.2 * weight_kg)
+```
+
+    weight in pounds: 132.66
+
+
+
+```python
+print(weight_kg)
+```
+
+    60.3
+
+
+
+```python
+weight_kg = 65.0
+print('weight in kilograms is now:', weight_kg)
+```
+
+    weight in kilograms is now: 65.0
+
+
+
+```python
+# There are 2.2 pounds per kilogram
+weight_lb = 2.2 * weight_kg
+print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
+```
+
+    weight in kilograms: 65.0 and in pounds: 143.0
+
+
+
+```python
+weight_kg = 100.0
+print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
+```
+
+    weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
+
+
+
+```python
+mass = 47.5
+age = 122
+mass = mass * 2.0
+age = age - 20
+```
+
+
+```python
+first, second = 'Grace', 'Hopper'
+third, fourth = second, first
+print(third, fourth)
+```
+
+    Hopper Grace
+
+
+
+```python
+planet = 'Earth'
+apples = 5
+distance = 10.5
+```
+
+
+```python
+print(type(planet))
+print(type(apples))
+print(type(distance))
+```
+
+    <class 'str'>
+    <class 'int'>
+    <class 'float'>
+
+## Analyzing Data (1, 2, & 3)
+```python
+import numpy
+```
+
+
+```python
+numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+```
+
+
+
+
+    array([[0., 0., 1., ..., 3., 0., 0.],
+           [0., 1., 2., ..., 1., 0., 1.],
+           [0., 1., 1., ..., 2., 1., 1.],
+           ...,
+           [0., 1., 1., ..., 1., 1., 1.],
+           [0., 0., 0., ..., 0., 2., 0.],
+           [0., 0., 1., ..., 1., 1., 0.]])
+
+
+
+
+```python
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+```
+
+
+```python
+print(data)
+```
+
+    [[0. 0. 1. ... 3. 0. 0.]
+     [0. 1. 2. ... 1. 0. 1.]
+     [0. 1. 1. ... 2. 1. 1.]
+     ...
+     [0. 1. 1. ... 1. 1. 1.]
+     [0. 0. 0. ... 0. 2. 0.]
+     [0. 0. 1. ... 1. 1. 0.]]
+
+
+
+```python
+print(type(data))
+```
+
+    <class 'numpy.ndarray'>
+
+
+
+```python
+print(data.dtype)
+```
+
+    float64
+
+
+
+```python
+print(data.shape)
+```
+
+    (60, 40)
+
+
+
+```python
+print('first value in data:', data[0, 0])
+```
+
+    first value in data: 0.0
+
+
+
+```python
+print('middle value in data:', data[29, 19])
+```
+
+    middle value in data: 16.0
+
+
+
+```python
+print(data[0:4, 0:10])
+```
+
+    [[0. 0. 1. 3. 1. 2. 4. 7. 8. 3.]
+     [0. 1. 2. 1. 2. 1. 3. 2. 2. 6.]
+     [0. 1. 1. 3. 3. 2. 6. 2. 5. 9.]
+     [0. 0. 2. 0. 4. 2. 2. 1. 6. 7.]]
+
+
+
+```python
+print(data[5:10, 0:10])
+```
+
+    [[0. 0. 1. 2. 2. 4. 2. 1. 6. 4.]
+     [0. 0. 2. 2. 4. 2. 2. 5. 5. 8.]
+     [0. 0. 1. 2. 3. 1. 2. 3. 5. 3.]
+     [0. 0. 0. 3. 1. 5. 6. 5. 5. 8.]
+     [0. 1. 1. 2. 1. 3. 5. 3. 5. 8.]]
+
+
+
+```python
+small = data[:3, 36:]
+print('small is:')
+print(small)
+```
+
+    small is:
+    [[2. 3. 0. 0.]
+     [1. 1. 0. 1.]
+     [2. 2. 1. 1.]]
+
+
+
+```python
+print(numpy.mean(data))
+```
+
+    6.14875
+
+
+
+```python
+import time
+print(time.ctime())
+```
+
+    Wed May 10 17:18:08 2023
+
+
+
+```python
+maxval, minval, stdval = numpy.amax(data), numpy.amin(data), numpy.std(data)
+
+print('maximum inflammation:', maxval)
+print('minimum inflammation:', minval)
+print('standard deviation:', stdval)
+```
+
+    maximum inflammation: 20.0
+    minimum inflammation: 0.0
+    standard deviation: 4.613833197118566
+
+
+
+```python
+patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
+print('maximum inflammation for patient 0:', numpy.amax(patient_0))
+```
+
+    maximum inflammation for patient 0: 18.0
+
+
+
+```python
+print('maximum inflammation for patient 2:', numpy.amax(data[2, :]))
+```
+
+    maximum inflammation for patient 2: 19.0
+
+
+
+```python
+print(numpy.mean(data, axis=0))
+```
+
+    [ 0.          0.45        1.11666667  1.75        2.43333333  3.15
+      3.8         3.88333333  5.23333333  5.51666667  5.95        5.9
+      8.35        7.73333333  8.36666667  9.5         9.58333333 10.63333333
+     11.56666667 12.35       13.25       11.96666667 11.03333333 10.16666667
+     10.          8.66666667  9.15        7.25        7.33333333  6.58333333
+      6.06666667  5.95        5.11666667  3.6         3.3         3.56666667
+      2.48333333  1.5         1.13333333  0.56666667]
+
+
+
+```python
+print(numpy.mean(data, axis=0).shape)
+```
+
+    (40,)
+
+
+
+```python
+print(numpy.mean(data, axis=1))
+```
+
+    [5.45  5.425 6.1   5.9   5.55  6.225 5.975 6.65  6.625 6.525 6.775 5.8
+     6.225 5.75  5.225 6.3   6.55  5.7   5.85  6.55  5.775 5.825 6.175 6.1
+     5.8   6.425 6.05  6.025 6.175 6.55  6.175 6.35  6.725 6.125 7.075 5.725
+     5.925 6.15  6.075 5.75  5.975 5.725 6.3   5.9   6.75  5.925 7.225 6.15
+     5.95  6.275 5.7   6.1   6.825 5.975 6.725 5.7   6.25  6.4   7.05  5.9  ]
+
+
+
+```python
+element = 'oxygen'
+print('first three characters:', element[0:3])
+print('last three characters:', element[3:6])
+```
+
+    first three characters: oxy
+    last three characters: gen
+
+
+
+```python
+element[:4]
+```
+
+
+
+
+    'oxyg'
+
+
+
+
+```python
+element[4:]
+```
+
+
+
+
+    'en'
+
+
+
+
+```python
+element[:]
+```
+
+
+
+
+    'oxygen'
+
+
+
+
+```python
+element[-1]
+```
+
+
+
+
+    'n'
+
+
+
+
+```python
+element[-2]
+```
+
+
+
+
+    'e'
+
+
+
+
+```python
+element[1:-1]
+```
+
+
+
+
+    'xyge'
+
+
+
+
+```python
+element = 'oxygen'
+print('last three characters:', element[-3:])
+element = 'carpentry'
+print('last three characters:', element[-3:])
+element = 'clone'
+print('last three characters:', element[-3:])
+element = 'hi'
+print('last three characters:', element[-3:])
+```
+
+    last three characters: gen
+    last three characters: try
+    last three characters: one
+    last three characters: hi
+
+
+
+```python
+element[3:3]
+```
+
+
+
+
+    ''
+
+
+
+
+```python
+data[3:3, 4:4]
+```
+
+
+
+
+    array([], shape=(0, 0), dtype=float64)
+
+
+
+
+```python
+data[3:3, :]
+```
+
+
+
+
+    array([], shape=(0, 40), dtype=float64)
+
+
+
+
+```python
+import numpy
+
+A = numpy.array([[1,2,3], [4,5,6], [7, 8, 9]])
+print('A = ')
+print(A)
+
+B = numpy.hstack([A, A])
+print('B = ')
+print(B)
+
+C = numpy.vstack([A, A])
+print('C = ')
+print(C)
+```
+
+    A = 
+    [[1 2 3]
+     [4 5 6]
+     [7 8 9]]
+    B = 
+    [[1 2 3 1 2 3]
+     [4 5 6 4 5 6]
+     [7 8 9 7 8 9]]
+    C = 
+    [[1 2 3]
+     [4 5 6]
+     [7 8 9]
+     [1 2 3]
+     [4 5 6]
+     [7 8 9]]
+
+
+
+```python
+D = numpy.hstack((A[:, :1], A[:, -1:]))
+print('D = ')
+print(D)
+```
+
+    D = 
+    [[1 3]
+     [4 6]
+     [7 9]]
+
+
+
+```python
+D = numpy.delete(arr=A, obj=1, axis=1)
+print('D = ')
+print(D)
+```
+
+    D = 
+    [[1 3]
+     [4 6]
+     [7 9]]
+
+
+
+```python
+patient3_week1 = data[3, :7]
+print(patient3_week1)
+```
+
+    [0. 0. 2. 0. 4. 2. 2.]
+
+
+
+```python
+[ 0 - 0, 2 - 0, 0 - 2, 4 - 0, 2 - 4, 2 - 2 ]
+```
+
+
+
+
+    [0, 2, -2, 4, -2, 0]
+
+
+
+
+```python
+numpy.diff(patient3_week1)
+```
+
+
+
+
+    array([ 0.,  2., -2.,  4., -2.,  0.])
+
+
+
+
+```python
+numpy.diff(data, axis=1)
+```
+
+
+
+
+    array([[ 0.,  1.,  2., ...,  1., -3.,  0.],
+           [ 1.,  1., -1., ...,  0., -1.,  1.],
+           [ 1.,  0.,  2., ...,  0., -1.,  0.],
+           ...,
+           [ 1.,  0.,  0., ..., -1.,  0.,  0.],
+           [ 0.,  0.,  1., ..., -2.,  2., -2.],
+           [ 0.,  1., -1., ..., -2.,  0., -1.]])
+
+
+
+
+```python
+numpy.amax(numpy.diff(data, axis=1), axis=1)
+```
+
+
+
+
+    array([ 7., 12., 11., 10., 11., 13., 10.,  8., 10., 10.,  7.,  7., 13.,
+            7., 10., 10.,  8., 10.,  9., 10., 13.,  7., 12.,  9., 12., 11.,
+           10., 10.,  7., 10., 11., 10.,  8., 11., 12., 10.,  9., 10., 13.,
+           10.,  7.,  7., 10., 13., 12.,  8.,  8., 10., 10.,  9.,  8., 13.,
+           10.,  7., 10.,  8., 12., 10.,  7., 12.])
+
+
+
+
+```python
+numpy.amax(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
+```
+
+
+
+
+    array([12., 14., 11., 13., 11., 13., 10., 12., 10., 10., 10., 12., 13.,
+           10., 11., 10., 12., 13.,  9., 10., 13.,  9., 12.,  9., 12., 11.,
+           10., 13.,  9., 13., 11., 11.,  8., 11., 12., 13.,  9., 10., 13.,
+           11., 11., 13., 11., 13., 13., 10.,  9., 10., 10.,  9.,  9., 13.,
+           10.,  9., 10., 11., 13., 10., 10., 12.])
+
+
+## Storing Values in Lists
 
